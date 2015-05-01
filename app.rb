@@ -24,22 +24,22 @@ post('/words') do
   erb(:success)
 end
 
-get('/definitions/id') do
+get('/definitions/:id') do
   @definition = Definition.find(params.fetch('id'))
-  erb(:vehicle)
+  erb(:word)
 end
 
-get('/word/:id') do
+get('/words/:id') do
   @word = Word.find(params.fetch('id').to_i())
   erb(:word)
 end
 
-get('/word/:id/definition/new') do
+get('/words/:id/definitions/new') do
   @word = Word.find(params.fetch('id').to_i())
-  erb(:word_form)
+  erb(:definition_form)
 end
 
-post('/definition') do
+post('/definitions') do
   meaning = params.fetch('meaning')
   speech = params.fetch('speech')
   source = params.fetch('source')

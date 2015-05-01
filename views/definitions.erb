@@ -1,0 +1,8 @@
+
+
+<h3>Here are the definitions: </h3>
+<ul>
+  <% @definition.each() do |definition| %>
+    <li><a href="/definitions/<%= definition.id() %>"><%= definition.meaning() %></a></li>
+  <% end %>
+</ul>
