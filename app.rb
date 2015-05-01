@@ -13,7 +13,7 @@ get('/word/new') do
 end
 
 get('/words') do
-  @word = Word.all()
+  @words = Word.all()
   erb(:words)
 end
 
