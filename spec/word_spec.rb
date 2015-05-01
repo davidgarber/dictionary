@@ -51,4 +51,10 @@ describe(Word) do
       expect(Word.find(test_word.id())).to(eq(test_word))
     end
   end
+  describe("#definitions") do
+    it("initially returns an empty array of definitions for the word") do
+      test_word = Word.new("definition")
+      expect(test_word.definitions()).to(eq([]))
+    end
+  end
 end

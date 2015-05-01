@@ -4,6 +4,7 @@ class Word
   define_method(:initialize) do |entry|
     @entry = entry
     @id = @@word.length().+(1)
+    @definitions = []
   end
 
   define_method(:entry) do
@@ -34,5 +35,9 @@ class Word
       end
     end
     found_name
+  end
+
+  define_method(:definitions) do
+    @definitions
   end
 end
