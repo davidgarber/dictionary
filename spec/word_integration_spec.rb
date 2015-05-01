@@ -10,3 +10,11 @@ describe('the word path', {:type => :feature}) do
     expect(page).to have_content('Success!')
   end
 end
+
+describe('the definition path', {:type => :feature}) do
+  it('adds a definition to the word') do
+    visit('/words')
+    click_link('cow')
+    expect(page).to have_content('meaning', 'speech', 'source')
+  end
+end
