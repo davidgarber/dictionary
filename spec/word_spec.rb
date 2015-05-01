@@ -1,6 +1,11 @@
 require('rspec')
 require('word')
 
+describe(Word) do
+  before() do
+    Word.clear()
+  end
+
   describe("#entry") do
     it("returns the entry of the word") do
       test_word = Word.new("definition")
@@ -21,3 +26,12 @@ require('word')
       expect(Word.all()).to(eq([test_word]))
     end
   end
+
+  describe(".clear") do
+    it("empties out all of the saved words") do
+      Word.new("definition").save()
+      Word.clear()
+      expect(Word.all()).to(eq([]))
+    end
+  end
+end
